@@ -9,12 +9,13 @@ function ClozeCard(text, cloze){
 	// if(this instanceof ClozeCard){
 		this.text = text;
 		this.cloze = cloze;
-		this.partial = function(){
-			var partial = text.replace(cloze, "...");
-			console.log(partial);
-			console.log(text);
+		// this.partial = function(){
+		// 	var partial = text.replace(cloze, "...");
+		// 	console.log(partial);
+		// 	console.log(text);
 
-		}
 };
 	// } 	else{
 	// 	return new ClozeCard(text,cloze);
+
+module.exports = ClozeCard;

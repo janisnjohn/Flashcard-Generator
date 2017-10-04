@@ -72,13 +72,13 @@ inquirer.prompt([
 
 ]).then(function(output){
 var newClozeCard = new ClozeCard(output.text, output.cloze);
+var partial = output.text.replace(output.cloze, "...");
 fs.appendFile("log.txt", output.text + ", " + output.cloze + "\r\n", function(err, output) {
 	if (err){
 		return console.log(err);
  }
 })
-		console.log("Front of the card is: " + output.text + "\r\nBack of the card is: " + output.cloze + "\r\n Cloze Card: ");
-		newClozeCard.partial();
+	console.log("Front of the card is: " + output.text + "\r\nBack of the card is: " + output.cloze + "\r\nPartial Card is: " +partial + "\r\nAnswer is: " + output.cloze);
 
 })
 }; 
