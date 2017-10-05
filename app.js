@@ -37,12 +37,26 @@ inquirer.prompt([
 	{
 	name: "front",
 	message: "What you want to say on the front of the flashcard?",
-	type: "input"
+	type: "input",
+	validate: function(output) {
+          if (isNaN(output) === false) {
+          console.log("oops. this doesn't work! Enter a valid Fact.");
+          return false;
+          }
+          return true;
+        }
 	},
 	{
 	name: "back",
 	message: "What you want on the back of the flashcard?",
-	type: "input"
+	type: "input",
+	validate: function(output) {
+          if (isNaN(output) === false) {
+          console.log("oops. this doesn't work! Enter a valid answer.");
+          return false;
+          }
+          return true;
+        }
 	}
 
 ]).then(function(output){
@@ -62,12 +76,26 @@ inquirer.prompt([
 	{
 	name: "text",
 	message: "What you want to say on the front of the flashcard?",
-	type: "input"
+	type: "input",
+	validate: function(output) {
+          if (isNaN(output) === false) {
+          console.log("oops. this doesn't work! Enter a valid Fact.");
+          return false;
+          }
+          return true;
+        }
 	},
 	{
 	name: "cloze",
 	message: "What you want on the back of the flashcard?",
-	type: "input"
+	type: "input",
+    validate: function(output) {
+          if (isNaN(output) === false) {
+          console.log("oops. this doesn't work! Enter a valid Answer.");
+          return false;
+          }
+          return true;
+        }
 	}
 
 ]).then(function(output){
